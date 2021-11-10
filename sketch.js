@@ -31,6 +31,17 @@ function mouseClicked() {
 
 
 function draw() {
+
+  let x = mouseX;
+  let y = mouseY;
+  let ix = width - mouseX; // Inverse X
+  let iy = height - mouseY; // Inverse Y
+  background("black");
+  fill(300, 150);
+  ellipse(x, height / 2, y, y);
+  fill(0, 159);
+  ellipse(ix, height / 2, iy, iy);
+
   iterator++;
   buttons.forEach((button, i) => {
     let x = noise((iterator + (40 * i)) / 400) * windowWidth;
